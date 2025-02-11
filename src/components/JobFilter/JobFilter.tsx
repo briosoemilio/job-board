@@ -11,6 +11,9 @@ import {
   MainContainer,
 } from "./styles";
 
+import RemoveIcon from "@public/images/icon-remove.svg";
+import Image from "next/image";
+
 const FilterTag = ({
   filter,
   onPressFilter,
@@ -24,7 +27,7 @@ const FilterTag = ({
         <p className="font-medium text-body">{filter}</p>
       </FilterNameContainer>
       <CloseButtonContainer onClick={() => onPressFilter(filter)}>
-        <p className="text-white">X</p>
+        <Image src={RemoveIcon} width={10} height={10} alt="remove-icon"/>
       </CloseButtonContainer>
     </FilterTagContainer>
   );
