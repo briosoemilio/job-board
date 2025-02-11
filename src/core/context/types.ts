@@ -20,12 +20,17 @@ export enum Contract {
   PartTime = "Part Time",
 }
 
+export enum Role {
+  Frontend = "Frontend",
+  Fullstack = "Fullstack",
+  Backend = "Backend",
+}
+
 export enum Level {
   Junior = "Junior",
   Midweight = "Midweight",
   Senior = "Senior",
 }
-
 
 export enum Languages {
   HTML = "HTML",
@@ -43,3 +48,5 @@ export enum Tools {
   Vue = "Vue",
   Django = "Django",
 }
+
+export type FilterType = Level | Languages | Tools | Role;

@@ -1,7 +1,7 @@
 "use client";
 
 import { useDataContext } from "@/core/context/DataContext";
-import { JobListing } from "@/core/context/types";
+import { FilterType, JobListing } from "@/core/context/types";
 import Image from "next/image";
 import {
   CompanyLogoContainer,
@@ -19,8 +19,10 @@ import {
 } from "./styles";
 
 const FilterTag = ({ filter }: { filter: string }) => {
+  const { onPressFilter } = useDataContext();
+
   return (
-    <FilterTagContainer>
+    <FilterTagContainer onClick={() => onPressFilter(filter as FilterType)}>
       <p className="font-semibold text-body">{filter}</p>
     </FilterTagContainer>
   );
