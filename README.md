@@ -9,7 +9,7 @@ npm run build-local
 Open local host on browser: 
 
 ```
-`http://localhost:3000/`
+http://localhost:3000/
 ```
 
 ## Functionality
