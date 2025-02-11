@@ -6,6 +6,10 @@ import Image from "next/image";
 import {
   CompanyLogoContainer,
   CompanyNameContainer,
+  ErrorContainer,
+  ErrorFooterContainer,
+  ErrorHeader,
+  ErrorIcon,
   FeaturedTagContainer,
   FilterTagContainer,
   FlexRowContainer,
@@ -15,8 +19,10 @@ import {
   JobRoleContainer,
   MainContainer,
   NewTagContainer,
+  RefreshText,
   SupplementaryDetailsContainer,
 } from "./styles";
+import { ERROR_ICON } from "@/constants/errorIcon";
 
 const FilterTag = ({ filter }: { filter: string }) => {
   const { onPressFilter } = useDataContext();
@@ -98,8 +104,26 @@ const JobCard = ({ data }: { data: JobListing }) => {
   );
 };
 
+const ErrorComponent = ({ reload }: { reload: () => void }) => {
+  return (
+    <ErrorContainer>
+      <ErrorHeader>Errorrrrrrrr</ErrorHeader>
+      <ErrorIcon>{ERROR_ICON.VARIANT_A}</ErrorIcon>
+      <ErrorFooterContainer>
+        <p>An unknown error has occurred please try again.</p>
+        <p>
+          Press to <RefreshText onClick={reload}>Refresh</RefreshText>.
+        </p>
+      </ErrorFooterContainer>
+    </ErrorContainer>
+  );
+};
+
 export const JobList = () => {
-  const { data } = useDataContext();
+  const { data, error, reload } = useDataContext();
+
+  if (error !== "") return <ErrorComponent reload={reload} />;
+
   return (
     <MainContainer>
       {data.map((jobListing, index) => (

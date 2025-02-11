@@ -49,7 +49,7 @@ mobile:mt-5 mobile:pt-5 mobile:border-t-[1px] mobile:border-t-primary
 // JobCard Sub Components
 
 // Featured Tag
-export const FeaturedTagContainer = tw.div`bg-veryDarkCyan py-1 px-2 items-center rounded-full`
+export const FeaturedTagContainer = tw.div`bg-veryDarkCyan py-1 px-2 items-center rounded-full`;
 
 // New Tag
 export const NewTagContainer = tw.div`bg-primary py-1 px-2 items-center rounded-full
@@ -57,7 +57,18 @@ export const NewTagContainer = tw.div`bg-primary py-1 px-2 items-center rounded-
 tablet:mx-3
 
 mobile:mx-3
-`
+`;
 
 // Filter Tag
-export const FilterTagContainer = tw.div`bg-background hover:bg-primary hover:text-white cursor-pointer py-1 px-3 rounded-sm`
+export const FilterTagContainer = tw.div`bg-background hover:bg-primary hover:text-white cursor-pointer py-1 px-3 rounded-sm`;
+
+// Error Component
+export const ErrorContainer = tw.div`text-heading`;
+
+export const ErrorHeader = tw.p`text-header font-merriweather`;
+
+export const ErrorIcon = tw.p`text-[12rem] mobile:text-[6rem] text-center font-merriweather`;
+
+export const ErrorFooterContainer = tw.div`desktop:ml-10 mobile:mt-10`;
+
+export const RefreshText = tw.span`underline font-bold hover:cursor-pointer`;
