@@ -2,6 +2,14 @@
 
 import { useDataContext } from "@/core/context/DataContext";
 import { FilterType } from "@/core/context/types";
+import {
+  ClearButtonContainer,
+  CloseButtonContainer,
+  FilterContainer,
+  FilterNameContainer,
+  FilterTagContainer,
+  MainContainer,
+} from "./styles";
 
 const FilterTag = ({
   filter,
@@ -11,17 +19,14 @@ const FilterTag = ({
   onPressFilter: (filter: FilterType) => void;
 }) => {
   return (
-    <div className="flex flex-row">
-      <div className="bg-background px-2 rounded-l-md">
+    <FilterTagContainer>
+      <FilterNameContainer>
         <p className="font-medium text-body">{filter}</p>
-      </div>
-      <div
-        className="bg-primary hover:bg-veryDarkCyan hover:cursor-pointer flex items-center justify-center px-2 rounded-r-md"
-        onClick={() => onPressFilter(filter)}
-      >
+      </FilterNameContainer>
+      <CloseButtonContainer onClick={() => onPressFilter(filter)}>
         <p className="text-white">X</p>
-      </div>
-    </div>
+      </CloseButtonContainer>
+    </FilterTagContainer>
   );
 };
 
@@ -31,8 +36,8 @@ const JobFilter = () => {
   if (filters.length === 0) return null;
 
   return (
-    <div className="bg-white z-10 shadow-lg rounded-md flex justify-between items-center mx-5 p-6 relative -top-12 -mb-4">
-      <div className="gap-5 flex">
+    <MainContainer>
+      <FilterContainer>
         {filters.map((filter, index) => (
           <FilterTag
             filter={filter}
@@ -40,13 +45,13 @@ const JobFilter = () => {
             onPressFilter={onPressFilter}
           />
         ))}
-      </div>
-      <div onClick={clearFilter}>
+      </FilterContainer>
+      <ClearButtonContainer onClick={clearFilter}>
         <p className="font-medium text-body underline hover:cursor-pointer">
           Clear
         </p>
-      </div>
-    </div>
+      </ClearButtonContainer>
+    </MainContainer>
   );
 };
 
