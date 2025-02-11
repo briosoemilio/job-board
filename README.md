@@ -1,5 +1,11 @@
 ## Getting Started
 
+Clone repository on local machine:
+
+```
+git clone https://github.com/briosoemilio/job-board.git
+```
+
 Install dependencies and run the development server:
 
 ```bash
