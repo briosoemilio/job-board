@@ -15,6 +15,7 @@ export interface DataContextType {
   error: string;
   onPressFilter: (filter: FilterType) => void;
   clearFilter: () => void;
+  reload: () => void;
 }
 
 export const DataContext = createContext<DataContextType>({
@@ -28,6 +29,9 @@ export const DataContext = createContext<DataContextType>({
   clearFilter: () => {
     // placeholder
   },
+  reload: () => {
+    // placeholder
+  },
 });
 
 export const DataProvider = ({ children }: { children: React.ReactNode }) => {
@@ -37,6 +41,15 @@ export const DataProvider = ({ children }: { children: React.ReactNode }) => {
   const [data, setData] = useState<JobListing[]>([]);
   const [allData, setAllData] = useState<JobListing[]>([]);
   const [filters, setFilters] = useState<FilterType[]>([]);
+
+  const reload = () => {
+    setIsLoading(false);
+    setError("");
+    setData([]);
+    setAllData([]);
+    setFilters([]);
+    loadData();
+  };
 
   const loadData = async () => {
     setIsLoading(true);
@@ -99,7 +112,15 @@ export const DataProvider = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <DataContext.Provider
-      value={{ data, filters, isLoading, error, onPressFilter, clearFilter }}
+      value={{
+        data,
+        filters,
+        isLoading,
+        error,
+        onPressFilter,
+        clearFilter,
+        reload,
+      }}
     >
       {children}
     </DataContext.Provider>
