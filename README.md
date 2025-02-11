@@ -1,12 +1,16 @@
 ## Getting Started
 
-Run the development server:
+Install dependencies and run the development server:
 
 ```bash
 npm run build-local
 ```
 
-Open: `http://localhost:3000/`
+Open local host on browser: 
+
+```
+`http://localhost:3000/`
+```
 
 ## Functionality
 
