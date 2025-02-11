@@ -19,8 +19,10 @@ export default {
       },
       fontFamily: {
         openSans: ["var(--font-openSans)"],
+        merriweather: ["var(--font-merriweather)"]
       },
       fontSize: {
+        header: "48px",
         body: "15px",
         subtitle: "12px",
         heading: "18px",
