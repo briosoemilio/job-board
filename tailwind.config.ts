@@ -21,7 +21,7 @@ export default {
         openSans: ["var(--font-openSans)"],
       },
       fontSize: {
-        body: "14px",
+        body: "15px",
         subtitle: "12px",
         heading: "18px",
         small: "10px",
