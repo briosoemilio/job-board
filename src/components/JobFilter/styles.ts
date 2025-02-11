@@ -19,7 +19,7 @@ flex flex-row
 `;
 
 export const FilterNameContainer = tw.div`
-bg-background px-2 rounded-l-mg
+bg-filter px-2 rounded-l-mg
 `;
 
 export const CloseButtonContainer = tw.div`

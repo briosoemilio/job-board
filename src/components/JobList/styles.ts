@@ -3,19 +3,26 @@ import tw from "tailwind-styled-components";
 // Job List Component
 export const MainContainer = tw.div`mobile:mt-10`;
 
+interface JobCardContainerProps {
+  featured: boolean;
+}
+
 // Job Card Component
-export const JobCardContainer = tw.div`
+export const JobCardContainer = tw.div<JobCardContainerProps>`
 group bg-white min-h-[135px] z-10 shadow-lg mb-5 rounded-md flex mx-5
 
-desktop:flex-row desktop:justify-between desktop:items-center desktop:p-10 
-desktop:hover:pl-9
+desktop:flex-row desktop:justify-between desktop:items-center desktop:p-10
 
-tablet:flex-col tablet:p-5 tablet:mx-2 tablet:hover:pl-4
+tablet:flex-col tablet:p-5 tablet:mx-2
 
-mobile:mx-2 mobile:p-5 mobile:flex-col mobile:mb-16 mobile:hover:pl-4
+mobile:mx-2 mobile:p-5 mobile:flex-col mobile:mb-16
 
-hover:cursor-pointer hover:border-l-4 hover:border-l-primary
-
+${(job) =>
+  job.$featured &&
+  `border-l-4 border-l-primary 
+  desktop:pl-9 
+  tablet: pl-4 
+  mobile: pl-4`}
 `;
 
 export const FlexRowContainer = tw.div`flex flex-row`;
@@ -37,6 +44,8 @@ mobile:gap-0`;
 export const JobRoleContainer = tw.div``;
 
 export const SupplementaryDetailsContainer = tw.div`flex flex-row gap-2 text-subtitle`;
+
+export const SupplementaryDetailText = tw.p`text-darkCyan`;
 
 export const JobFiltersContainer = tw.div`
 flex flex-row flex-2 gap-4 flex-wrap
@@ -60,7 +69,7 @@ mobile:mx-3
 `;
 
 // Filter Tag
-export const FilterTagContainer = tw.div`bg-background hover:bg-primary hover:text-white cursor-pointer py-1 px-3 rounded-sm`;
+export const FilterTagContainer = tw.div`bg-filter hover:bg-primary hover:text-white cursor-pointer py-1 px-3 rounded-sm`;
 
 // Error Component
 export const ErrorContainer = tw.div`text-heading`;

@@ -21,6 +21,7 @@ import {
   NewTagContainer,
   RefreshText,
   SupplementaryDetailsContainer,
+  SupplementaryDetailText,
 } from "./styles";
 import { ERROR_ICON } from "@/constants/errorIcon";
 
@@ -52,7 +53,7 @@ const NewTag = () => {
 
 const JobCard = ({ data }: { data: JobListing }) => {
   return (
-    <JobCardContainer>
+    <JobCardContainer $featured={data.featured}>
       <FlexRowContainer>
         <CompanyLogoContainer>
           <Image
@@ -77,16 +78,16 @@ const JobCard = ({ data }: { data: JobListing }) => {
             {data.featured && <FeaturedTag />}
           </CompanyNameContainer>
           <JobRoleContainer>
-            <p className="text-black font-semibold text-heading group-hover:text-primary">
+            <p className="text-veryDarkCyan font-semibold text-heading hover:text-primary hover:cursor-pointer">
               {data.position}
             </p>
           </JobRoleContainer>
           <SupplementaryDetailsContainer>
-            <p>{data.postedAt}</p>
-            <p> ∙ </p>
-            <p>{data.contract}</p>
-            <p> ∙ </p>
-            <p>{data.location}</p>
+            <SupplementaryDetailText>{data.postedAt}</SupplementaryDetailText>
+            <SupplementaryDetailText>∙</SupplementaryDetailText>
+            <SupplementaryDetailText>{data.contract}</SupplementaryDetailText>
+            <SupplementaryDetailText>∙</SupplementaryDetailText>
+            <SupplementaryDetailText>{data.location}</SupplementaryDetailText>
           </SupplementaryDetailsContainer>
         </JobDetailsContainer>
       </FlexRowContainer>
