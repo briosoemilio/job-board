@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import HeaderImageDesktop from "@public/svg/bg-header-desktop.svg";
-import HeaderImageMobile from "@public/svg/bg-header-desktop.svg";
+import HeaderImageDesktop from "@public/images/bg-header-desktop.svg";
+import HeaderImageMobile from "@public/images/bg-header-desktop.svg";
 
 const Header = () => {
   return (
@@ -14,7 +14,7 @@ const Header = () => {
       <Image
         src={HeaderImageMobile}
         alt="header-image-mobile"
-        className="w-[100%] hidden mobile:block"
+        className="w-[100%] hidden mobile:block tablet:block"
       />
     </div>
   );
