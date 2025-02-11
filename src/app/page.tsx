@@ -1,5 +1,10 @@
-
+import Container from "@/components/Container/Container";
+import { JobList } from "@/components/JobList/JobList";
 
 export default function Home() {
-  return <div>Test</div>;
+  return (
+    <Container>
+      <JobList />
+    </Container>
+  );
 }
