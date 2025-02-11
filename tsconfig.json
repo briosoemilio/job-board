@@ -23,7 +23,7 @@
       "@public/*": ["./public/*"],
       "@public/data/*": ["./public/data/*"],
       "@public/fonts/*":["./public/fonts/*"],
-      "@public/svg/*": ["./public/svg/*"],
+      "@public/images/*": ["./public/images/*"],
       "@colors":["./src/constants/colors.ts"]
     }
   },
