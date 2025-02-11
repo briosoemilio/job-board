@@ -21,3 +21,9 @@ Applied the following functionalities:
 
 - Added not found page.
 - Added error handling.
+
+## Tech Used
+- NextJS
+- TailwindCSS
+- React Context
+- Tailwind Styled Components
