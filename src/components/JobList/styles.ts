@@ -8,12 +8,13 @@ export const JobCardContainer = tw.div`
 group bg-white min-h-[135px] z-10 shadow-lg mb-5 rounded-md flex mx-5
 
 desktop:flex-row desktop:justify-between desktop:items-center desktop:p-10 
+desktop:hover:pl-9
 
-tablet:flex-col tablet:p-5 tablet:mx-2
+tablet:flex-col tablet:p-5 tablet:mx-2 tablet:hover:pl-4
 
-mobile:mx-2 mobile:p-5 mobile:flex-col mobile:mb-16
+mobile:mx-2 mobile:p-5 mobile:flex-col mobile:mb-16 mobile:hover:pl-4
 
-hover:cursor-pointer hover:border-l-4 hover:border-l-primary hover:pl-9
+hover:cursor-pointer hover:border-l-4 hover:border-l-primary
 
 `;
 
