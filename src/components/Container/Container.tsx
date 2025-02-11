@@ -1,4 +1,5 @@
 import React from "react";
+import { MainContainer } from "./styles";
 
 export interface ContainerProps
   extends React.DetailedHTMLProps<
@@ -9,7 +10,7 @@ export interface ContainerProps
 }
 
 const Container = ({ children, ...rest }: ContainerProps) => {
-  return <div {...rest} className="p-10 py-5 mobile:px-2">{children}</div>;
+  return <MainContainer {...rest}>{children}</MainContainer>;
 };
 
 export default Container;
