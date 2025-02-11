@@ -10,11 +10,21 @@ export default {
   theme: {
     screens: {
       mobile: { max: "375px" },
-      desktop: { min: "376px",max: "1440px" },
+      tablet: { min: "376px", max: "1024px" },
+      desktop: { min: "1025px", max: "1440px" },
     },
     extend: {
       colors: {
-        ...COLORS
+        ...COLORS,
+      },
+      fontFamily: {
+        openSans: ["var(--font-openSans)"],
+      },
+      fontSize: {
+        body: "14px",
+        subtitle: "12px",
+        heading: "18px",
+        small: "10px",
       },
     },
   },
