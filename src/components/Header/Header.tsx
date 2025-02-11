@@ -2,10 +2,11 @@ import React from "react";
 import Image from "next/image";
 import HeaderImageDesktop from "@public/images/bg-header-desktop.svg";
 import HeaderImageMobile from "@public/images/bg-header-desktop.svg";
+import { MainContainer } from "./styles";
 
 const Header = () => {
   return (
-    <div className="bg-primary">
+    <MainContainer>
       <Image
         src={HeaderImageDesktop}
         alt="header-image-desktop"
@@ -16,7 +17,7 @@ const Header = () => {
         alt="header-image-mobile"
         className="w-[100%] hidden mobile:block tablet:block"
       />
-    </div>
+    </MainContainer>
   );
 };
 
